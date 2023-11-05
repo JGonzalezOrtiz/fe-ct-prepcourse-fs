@@ -25,12 +25,12 @@ function incrementarPorUno(array) {
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
    //for (var i = 0; i < array.length; i++) {
-   //   array[i] = array[i] + 1
+   //   array[i] += 1
    //}
 
    var arrayNuevo = array.map(function (numero)
    {
-      return numero = numero +1;
+      return numero = numero +1; //return numero +=1;
    });
 
    return arrayNuevo;
@@ -263,15 +263,47 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+
+   const resultado = [];
+  let suma = num;
+
+  for (let i = 1; i <= 10; i++) {
+    suma += 2;
+    resultado.push(suma);
+
+    if (suma === i) {
+      return "Se interrumpió la ejecución";
+    }
+
+    if (i === 10) {
+      break;
+    }
+  }
+
+  return resultado;
+
+  
 }
 
 function continueStatement(num) {
    // Iterar en un bucle aumentando en 2 el número recibido hasta un límite de 10 veces.
    // Guardar cada nuevo valor en un array y retornarlo.
    // Cuando el número de iteraciones alcance el valor 5, no se suma ese caso y
-   // se continua con la siguiente iteración.
+   // se continua con la siguiente iteración. 
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   const resultado = [];
+
+   for (let i = 1; i <= 10; i++){
+      if (i === 5) {
+         continue;
+      }
+      num += 2;
+      resultado.push(num);
+   }
+
+      return resultado;
+   
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
